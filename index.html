@@ -7,7 +7,324 @@
   <style>
     /* Reset simples */
     :root{--yellow:#ffcf33;--bg:#f7f7f7;--card:#fff;--muted:#666}
+    *{box-sizing:border-box}<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Girassol Freitas — Página Unificada</title>
+  <style>
+    :root{--yellow:#ffcf33;--bg:#f7f7f7;--card:#fff;--muted:#666}
     *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
+    .header{$1 position:sticky; top:0; z-index:1000;
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px}
+    .logo{height:40px; width:auto; border-radius:6px}
+    .title{font-size:18px;margin:0}
+    .nav{margin-left:auto}
+    .nav a{margin-left:12px; color:#111; text-decoration:none}
+    .container{max-width:1100px; margin:18px auto; padding:0 16px}
+    .card{background:var(--card); padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-bottom:16px}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media(min-width:800px){ .grid{grid-template-columns:2fr 1fr} }
+    h2,h3{margin-top:0}
+    .profile-img{width:100%; max-width:220px; border-radius:8px}
+    .project-img{width:100%; height:160px; object-fit:cover; border-radius:6px}
+    footer{padding:18px 0; text-align:center; color:var(--muted)}
+
+    /* Carousel básico */
+    .carousel{position:relative; overflow:hidden}
+    .slides{display:flex; transition:transform 400ms ease}
+    .slide{min-width:100%; padding:16px}
+    .carousel-controls{position:absolute; top:50%; left:0; right:0; transform:translateY(-50%); display:flex; justify-content:space-between; padding:0 8px}
+    .btn{background:rgba(0,0,0,0.6); color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer}
+
+    /* outline style buttons */
+    .outline-btn{display:inline-block;border:2px solid var(--yellow);padding:10px 16px;border-radius:6px;color:#111;text-decoration:none;background:transparent;font-weight:600;cursor:pointer}
+    .outline-btn:hover{background:var(--yellow)}
+
+    .doc-list{display:flex; flex-wrap:wrap; gap:10px}
+    .doc-btn{display:inline-block;border:2px solid var(--yellow);padding:10px 16px;border-radius:6px;color:#111;text-decoration:none;background:transparent;font-weight:600;cursor:pointer}
+    .doc-btn:hover{background:var(--yellow)}
+
+    .modal{position:fixed; inset:0; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:9999; padding:20px}
+    .modal .box{width:100%; max-width:900px; height:80vh; background:#fff; border-radius:8px; overflow:hidden; position:relative}
+    .modal iframe{width:100%; height:100%; border:0}
+    .modal .close{position:absolute; top:8px; right:8px; background:#111;color:#fff;border:none;padding:8px 10px;border-radius:6px;cursor:pointer}
+
+    .muted{color:var(--muted)}
+    pre.note{background:#111; color:#fff; padding:12px; border-radius:8px; overflow:auto}
+  @media(max-width:700px){.nav{overflow-x:auto;white-space:nowrap;}.nav a{display:inline-block;padding:8px;}.projects-grid{display:flex!important;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;}.projects-grid .card{min-width:80%;scroll-snap-align:center;}} </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <img src="assets/images/logo.jpeg" alt="Logo Girassol Freitas" class="logo">
+      <h1 class="title">Girassol Freitas — Assessoria Pedagógica Inclusiva</h1>
+      <nav class="nav">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#legislacao">Leis</a>
+        <a href="#direitos">Direitos</a>
+        <a href="#contato">Contato</a>
+        <a href="#instagram">Instagram</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="home" class="container">
+    <section class="card">
+      <h2>Educação com afeto, inclusão com propósito</h2>
+      <p>Assessoria pedagógica especializada para escolas e famílias — formação, consultoria, AEE e apoio técnico.</p>
+      <p class="muted">Contato: +55 11 97632-6551 | girassolfreitasassessoria@gmail.com</p>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="sobre">
+        <h3>Sobre a Girassol Freitas</h3>
+        <p>Na GIRASSOL FREITAS acreditamos que a educação inclusiva é um direito de todos. Oferecemos assessoria especializada para escolas públicas e privadas, com foco no acesso, permanência e aprendizagem de estudantes com deficiência.</p>
+        <h4>Missão, Visão e Valores</h4>
+        <ul>
+          <li>Missão: Promover a inclusão educacional por meio de formação continuada</li>
+          <li>Visão: Ser referência nacional</li>
+          <li>Valores: Inclusão, respeito à diversidade, inovação pedagógica</li>
+        </ul>
+        <h4>Documentos</h4>
+        <div class="doc-list">
+          <button class="doc-btn" data-pdf="assets/Curriculo Aline Galeotti.pdf">Currículo Aline Galeotti</button>
+          <button class="doc-btn" data-pdf="assets/Portifolio Girassol Freitas.pdf">Portfólio Girassol Freitas</button>
+          <button class="doc-btn" data-pdf="https://raw.githubusercontent.com/girassolfreitasassessoria/pedagogica/main/assets/images/Curriculo%20Aline%20Galeotti.pdf">Currículo Aline</button>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3>Perfil da Diretora</h3>
+        <img src="https://raw.githubusercontent.com/girassolfreitasassessoria/pedagogica/main/assets/images/diretora_aline.jpeg" alt="Aline Galeotti" class="profile-img">
+        <p><strong>Aline Apª de Freitas Coutinho Galeotti</strong> — Mestre em Educação Especial, com 25+ anos de experiência. Atua com formação e assessoria para inclusão escolar.</p>
+        <img src="https://raw.githubusercontent.com/girassolfreitasassessoria/pedagogica/main/assets/images/capa%20do%20livo.jpeg" alt="Livro publicado" style="width:100%; border-radius:8px; margin-top:12px;">
+        <p><a href="#projetos" class="outline-btn">🔎 Ver projetos</a></p>
+      </aside>
+    </div>
+
+    <section id="servicos" class="card">
+      <h3>Serviços</h3>
+      <ul>
+        <li>Formações e oficinas para professores, coordenadores e cuidadores</li>
+        <li>Consultoria em adaptação curricular e acessibilidade</li>
+        <li>Organização e padronização da documentação inclusiva</li>
+        <li>Apoio técnico ao AEE e planejamento pedagógico</li>
+        <li>Elaboração de pareceres e acompanhamento de casos</li>
+        <li>Contratação de mão de obra para atuação como cuidador</li>
+      </ul>
+    </section>
+
+    <section id="projetos" class="card">
+      <h3>Projetos de Inclusão (destaques)</h3>
+      <div class="projects-grid">
+        <div class="card"><img src="assets/images/ai_image_1.png" class="project-img" alt="Projeto 1"><h4>Projeto 1 - Sala Multifuncional Comunitária</h4><p>Criar uma sala multifuncional para AEE com recursos digitais e materiais adaptados.</p></div>
+        <div class="card"><img src="assets/images/ai_image_2.png" class="project-img" alt="Projeto 2"><h4>Projeto 2 - Programa Família Ativa</h4><p>Oficinas e grupos de apoio para famílias.</p></div>
+        <div class="card"><img src="assets/images/ai_image_3.png" class="project-img" alt="Projeto 3"><h4>Projeto 3 - Tecnologia Assistiva na Escola</h4><p>Implementação de tecnologias assistivas com formação.</p></div>
+        <div class="card"><img src="assets/images/ai_image_4.png" class="project-img" alt="Projeto 4"><h4>Projeto 4 - Inclusão Sensorial</h4><p>Ambientes e rotinas sensoriais para ampliar participação.</p></div>
+        <div class="card"><img src="assets/images/ai_image_5.png" class="project-img" alt="Projeto 5"><h4>Projeto 5 - Capacitação e Emprego para Cuidadores</h4><p>Formação profissional e intermediação para cuidadores.</p></div>
+      </div>
+    </section>
+
+    <section id="legislacao" class="card">
+      <h3>Legislação — Educação Inclusiva</h3>
+      <div class="doc-list">
+        <button class="doc-btn" data-pdf="https://www.planalto.gov.br/ccivil_03/leis/l13146.htm">Lei Brasileira de Inclusão (LBI) — Lei nº 13.146/2015</button>
+        <button class="doc-btn" data-pdf="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm">Constituição Federal — Direito à Educação</button>
+        <button class="doc-btn" data-pdf="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm">Estatuto da Criança e do Adolescente — ECA</button>
+        <button class="doc-btn" data-pdf="http://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=16690-politica-nacional-de-educacao-especial-na-perspectiva-da-educacao-inclusiva&category_slug=dezembro-2014-pdf&Itemid=30192">Política Nacional de Educação Especial (MEC)</button>
+      </div>
+      <p class="muted"><em>Os documentos serão exibidos diretamente na página.</em></p>
+    </section>
+
+    <section id="direitos" class="card">
+      <h3>Direitos Humanos e Inclusão</h3>
+      <div class="doc-list">
+        <button class="doc-btn" data-pdf="https://www.ohchr.org/sites/default/files/UDHR/Documents/UDHR_Translations/por.pdf">Declaração Universal dos Direitos Humanos (ONU)</button>
+        <button class="doc-btn" data-pdf="https://www.planalto.gov.br/ccivil_03/decreto/d6949.htm">Convenção sobre os Direitos das Pessoas com Deficiência (ONU)</button>
+        <button class="doc-btn" data-pdf="https://unesdoc.unesco.org/ark:/48223/pf0000125063">Princípios da Educação Inclusiva — UNESCO</button>
+      </div>
+      <p class="muted"><em>Todos os documentos abrem em visualização interna.</em></p>
+    </section>
+
+    <section id="contato" class="card">
+      <h3>Contato</h3>
+      <p><strong>Telefone/WhatsApp:</strong> +55 11 97632-6551</p>
+      <p><strong>Email:</strong> girassolfreitasassessoria@gmail.com</p>
+      <p><strong>Endereço:</strong> Rua Campos Jordão 221, Cajamar - SP</p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/inclusao.gf.oficial" target="_blank">@inclusao.gf.oficial</a></p>
+    </section>
+
+    <section id="instagram" class="card">
+      <h3>Instagram — Posts recentes</h3>
+
+      <!-- Elfsight widget (you provided) -->
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-81f75295-b087-4a02-98a2-fa8908d480b6" style="margin-bottom:16px"></div>
+
+      <!-- Fallback / local carousel (uses data/insta_posts.json) -->
+      <div class="carousel" aria-live="polite">
+        <div class="slides" id="slides" style="min-height:160px"></div>
+        <div class="carousel-controls">
+          <button id="prev" class="btn" aria-label="Anterior">◀</button>
+          <button id="next" class="btn" aria-label="Próximo">▶</button>
+        </div>
+      </div>
+
+      <div style="margin-top:10px; display:flex; gap:12px; align-items:center;">
+        <button id="refreshBtn" class="outline-btn">Atualizar agora</button>
+        <a href="https://www.instagram.com/inclusao.gf.oficial" target="_blank" style="text-decoration:none; padding:10px 14px; border-radius:6px; background:#111; color:#fff">Abrir perfil no Instagram</a>
+      </div>
+
+      <p style="margin-top:12px;" class="muted">Instruções rápidas: crie um arquivo <code>data/insta_posts.json</code> contendo um array JSON com as URLs públicas dos posts (ex: ["https://www.instagram.com/p/XXXXXXXX/", ...]). O carrossel local será atualizado automaticamente.</p>
+    </section>
+
+    <section class="card">
+      <h4>Notas técnicas</h4>
+      <p class="muted">Ponto importante: este modelo não contorna políticas de privacidade ou endpoints privados do Instagram. Para incorporar automaticamente sem arquivos locais, é necessário configurar a API oficial do Instagram (Basic Display ou Graph API) com token — posso ajudar com isso se desejar.</p>
+      <pre class="note">Exemplo de data/insta_posts.json
+[
+  "https://www.instagram.com/p/XXXXXXXX/",
+  "https://www.instagram.com/p/YYYYYYYY/"
+]
+</pre>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">© Girassol Freitas — Assessoria Pedagógica Inclusiva</div>
+  </footer>
+
+  <!-- Modal for PDFs -->
+  <div id="pdfModal" class="modal" style="display:none">
+    <div class="box">
+      <button class="close" id="modalClose">✕</button>
+      <iframe id="pdfFrame" src="" title="PDF Viewer"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // --- PDF modal handling ---
+    document.querySelectorAll('.doc-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const pdf = btn.getAttribute('data-pdf');
+        const modal = document.getElementById('pdfModal');
+        const frame = document.getElementById('pdfFrame');
+        frame.src = pdf;
+        modal.style.display = 'flex';
+      });
+    });
+    const closeBtn = document.getElementById('modalClose');
+    if(closeBtn) closeBtn.addEventListener('click', ()=>{ document.getElementById('pdfModal').style.display='none'; document.getElementById('pdfFrame').src=''; });
+
+    // --- Carousel + Instagram loader (safe guards to avoid null listeners) ---
+    const slidesEl = document.getElementById('slides');
+    let slides = [];
+    let current = 0;
+    let autoplay = true; // user requested automatic carousel (C)
+    let autoplayInterval = 5000;
+    let autoTimer = null;
+
+    function renderSlides(){
+      if(!slidesEl) return;
+      slidesEl.innerHTML = '';
+      if(slides.length === 0){
+        const empty = document.createElement('div');
+        empty.className='slide';
+        empty.innerHTML = '<p>Nenhum post configurado. Crie <code>data/insta_posts.json</code> com um array de URLs públicas do Instagram.</p>';
+        slidesEl.appendChild(empty);
+        updatePosition();
+        return;
+      }
+      slides.forEach((item, idx)=>{
+        const s = document.createElement('div');
+        s.className='slide';
+        if(item.match(/\.(jpg|jpeg|png|gif)(\?.*)?$/i)){
+          s.innerHTML = `<img src="${item}" style="width:100%; height:auto; border-radius:8px;">`;
+        } else if(item.includes('instagram.com')){
+          s.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${item}" data-instgrm-version="14"><a href="${item}">${item}</a></blockquote>`;
+        } else {
+          s.innerHTML = `<a href="${item}" target="_blank">${item}</a>`;
+        }
+        slidesEl.appendChild(s);
+      });
+      // process instagram embeds if available
+      if(window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function'){
+        window.instgrm.Embeds.process();
+      }
+      updatePosition();
+    }
+
+    function updatePosition(){
+      if(!slidesEl) return;
+      slidesEl.style.transform = `translateX(-${current*100}%)`;
+    }
+
+    function showPrev(){ if(slides.length===0) return; current=(current-1+slides.length)%slides.length; updatePosition(); }
+    function showNext(){ if(slides.length===0) return; current=(current+1)%slides.length; updatePosition(); }
+
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    if(prevBtn) prevBtn.addEventListener('click', showPrev);
+    if(nextBtn) nextBtn.addEventListener('click', showNext);
+
+    // Refresh button (guarded)
+    const refreshBtn = document.getElementById('refreshBtn');
+    if(refreshBtn) refreshBtn.addEventListener('click', ()=>{ fetchInstaPosts(); });
+
+    async function fetchInstaPosts(){
+      try{
+        const resp = await fetch('data/insta_posts.json?_=' + Date.now());
+        if(!resp.ok) throw new Error('no json');
+        const arr = await resp.json();
+        if(Array.isArray(arr)){
+          slides = arr;
+          current = 0;
+          renderSlides();
+        } else {
+          slides = [];
+          renderSlides();
+        }
+      }catch(e){
+        slides = [];
+        renderSlides();
+      }
+    }
+
+    function startAuto(){
+      if(autoTimer) clearInterval(autoTimer);
+      if(!autoplay) return;
+      autoTimer = setInterval(()=>{ showNext(); }, autoplayInterval);
+    }
+
+    function stopAuto(){ if(autoTimer) clearInterval(autoTimer); }
+
+    // pause on user interaction
+    if(slidesEl){
+      slidesEl.addEventListener('mouseenter', ()=>{ stopAuto(); });
+      slidesEl.addEventListener('mouseleave', ()=>{ startAuto(); });
+    }
+
+    // load instagram embed script dynamically (only once)
+    (function loadInstagramScript(){
+      const s = document.createElement('script');
+      s.async = true; s.defer = true; s.src = 'https://www.instagram.com/embed.js';
+      s.onload = ()=>{ if(window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process(); };
+      document.body.appendChild(s);
+    })();
+
+    // init
+    fetchInstaPosts().then(()=>{ startAuto(); });
+  </script>
+</body>
+</html>
+
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
     .header{background:var(--yellow); padding:18px 20px}
     .header h1{margin:0;font-size:20px}

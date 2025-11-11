@@ -45,7 +45,7 @@ Para enviar o site ao GitHub com as configurações já preparadas, execute:
 Adicione o registro CNAME no seu provedor de DNS apontando `www.girassolfreitas.com.br` para `<usuario>.github.io` como instruído pelo GitHub Pages. O arquivo `CNAME` já está incluído no repositório.
 
 ## URL final
-https://girassolfreitas.github.io/girassolfreitas/  (ou seu domínio personalizado https://www.girassolfreitas.com.br)
+https://girassolfreitas.github.io/girassolfreitas/  (ou seu domínio personalizado girassolfreitas.rf.gd)
 
 
 ---

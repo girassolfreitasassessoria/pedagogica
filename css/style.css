@@ -1,0 +1,15 @@
+
+:root{--primary:#ffcf33;--accent:#ff7ab6;--dark:#333;}
+body{font-family: Arial, Helvetica, sans-serif;margin:0;color:var(--dark);line-height:1.6}
+.header{background:var(--primary);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+.header h1{margin:0;font-size:26px}
+.nav a{margin-left:14px;text-decoration:none;color:#222;font-weight:600}
+.hero{background:linear-gradient(90deg, rgba(255,122,182,0.08), rgba(255,207,51,0.06));padding:40px 20px;text-align:center}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+.card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+footer{background:#222;color:#fff;padding:18px;text-align:center;margin-top:30px}
+.profile-img{max-width:260px;border-radius:12px;display:block;margin:0 auto 12px}
+.project-img{width:100%;border-radius:8px}
+.laws-list li{margin-bottom:8px}
+.instagram-embed{display:flex;justify-content:center;margin:12px 0}

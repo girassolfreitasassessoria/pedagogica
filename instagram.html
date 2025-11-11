@@ -1,0 +1,40 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Instagram - Vídeos</title><link rel="stylesheet" href="css/style.css"></head><body>
+<div style="background:#ffcf33;padding:18px 24px"><h1>Galeria de Vídeos do Instagram</h1></div>
+<div class="container">
+  <div class="card">
+    <h2>Como publicar vídeos do perfil @inclusao.gf.oficial</h2>
+    <p>Devido a limitações de acesso direto via API público, este espaço oferece duas opções:</p>
+    <ol>
+      <li>Colar URLs das publicações (ex.: https://www.instagram.com/p/XXXXXXXX/) no arquivo <code>data/insta_posts.json</code> — a página irá renderizar automaticamente os embeds.</li>
+      <li>Usar o link do perfil para abrir no Instagram (botão abaixo).</li>
+    </ol>
+    <p>Instruções rápidas: copie URLs dos posts que contenham vídeos e cole no arquivo mencionado; a página os exibirá.</p>
+    <div class="card">
+      <h3>Galeria</h3>
+      <div id="gallery"></div>
+    </div>
+    <p><a href="https://www.instagram.com/inclusao.gf.oficial" target="_blank">Abrir perfil no Instagram</a></p>
+  </div>
+</div>
+<script>
+// Attempt to fetch local JSON of post URLs and render instagram embeds
+async function loadInstaPosts(){
+  try{
+    const resp = await fetch('data/insta_posts.json');
+    const posts = await resp.json();
+    const gallery = document.getElementById('gallery');
+    if(posts.length===0){ gallery.innerHTML='<p>Nenhum post configurado. Adicione URLs em data/insta_posts.json</p>'; return; }
+    posts.forEach(url=>{
+      const block = document.createElement('div');
+      block.style.margin='12px 0';
+      block.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}">${url}</a></blockquote>`;
+      gallery.appendChild(block);
+    });
+    const s = document.createElement('script'); s.async=true; s.src='//www.instagram.com/embed.js'; document.body.appendChild(s);
+  }catch(e){
+    document.getElementById('gallery').innerHTML='<p>Erro ao carregar posts. Verifique se existe o arquivo data/insta_posts.json</p>';
+  }
+}
+loadInstaPosts();
+</script>
+</body></html>

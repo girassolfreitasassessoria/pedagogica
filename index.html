@@ -8,10 +8,10 @@
     :root{--yellow:#ffcf33;--bg:#f7f7f7;--card:#fff;--muted:#666}
     *{box-sizing:border-box}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
-    .header{box-shadow:0 2px 6px rgba(0,0,0,0.15); $1 position:sticky; top:0; z-index:1000;
+    .header{$1 position:sticky; top:0; z-index:1000;
     .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px}
     .logo{height:40px; width:auto; border-radius:6px}
-    .title{font-size:14px; margin-left:12px; white-space:nowrap; font-weight:600;}
+    .title{font-size:18px;margin:0}
     .nav{margin-left:auto}
     .nav a{margin-left:12px; color:#111; text-decoration:none}
     .container{max-width:1100px; margin:18px auto; padding:0 16px}
@@ -45,12 +45,13 @@
 
     .muted{color:var(--muted)}
     pre.note{background:#111; color:#fff; padding:12px; border-radius:8px; overflow:auto}
-  @media(max-width:700px){.nav{overflow-x:auto;white-space:nowrap;}.nav a{display:inline-block;padding:8px;}.projects-grid{display:flex!important;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;}.projects-grid .card{min-width:80%;scroll-snap-align:center;}} .header{transition:box-shadow 0.3s ease, background-color 0.3s ease;} .nav a{transition:color 0.2s ease, background-color 0.2s ease; padding:6px 8px; border-radius:4px;} .nav a:hover{background:rgba(255,255,255,0.4);} .nav a.active{background:rgba(0,0,0,0.25); color:#fff;} </style>
+  @media(max-width:700px){.nav{overflow-x:auto;white-space:nowrap;}.nav a{display:inline-block;padding:8px;}.projects-grid{display:flex!important;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;}.projects-grid .card{min-width:80%;scroll-snap-align:center;}} </style>
 </head>
 <body>
   <div class="header">
     <div class="header-inner">
       <img src="assets/images/logo.jpeg" alt="Logo Girassol Freitas" class="logo">
+      <h1 class="title">Girassol Freitas — Assessoria Pedagógica Inclusiva</h1>
       <nav class="nav">
         <a href="#home">Início</a>
         <a href="#sobre">Sobre</a>
@@ -61,7 +62,6 @@
         <a href="#contato">Contato</a>
         <a href="#instagram">Instagram</a>
       </nav>
-      <h1 class="title">Girassol Freitas — Assessoria Pedagógica Inclusiva</h1>
     </div>
   </div>
 
@@ -313,5 +313,5 @@
     // init
     fetchInstaPosts().then(()=>{ startAuto(); });
   </script>
-<script>const sections=document.querySelectorAll('main section[id]');const navLinks=document.querySelectorAll('.nav a');function onScroll(){let scrollPos=window.scrollY+120;sections.forEach(sec=>{if(scrollPos>=sec.offsetTop && scrollPos<sec.offsetTop+sec.offsetHeight){navLinks.forEach(a=>a.classList.remove('active'));const active=document.querySelector('.nav a[href="#'+sec.id+'"]');if(active) active.classList.add('active');}});}window.addEventListener('scroll',onScroll);onScroll();</script></body>
+</body>
 </html>
